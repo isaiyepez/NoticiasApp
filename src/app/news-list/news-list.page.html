@@ -5,5 +5,16 @@
 </ion-header>
 
 <ion-content>
+    <ion-card *ngFor= "let noticia of noticias">
+        <ion-card-header>
+          <ion-card-title>{{ noticia.titulo }}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{noticia.descripcion}}
+          <p><strong>Autor: </strong> {{noticia.autor.nombre}} {{noticia.autor.apellido}}</p>
+          <p><strong>Fecha: </strong> {{noticia.fecha | date}}</p>
+        </ion-card-content>
+      </ion-card>
 
 </ion-content>
