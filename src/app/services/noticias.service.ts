@@ -11,6 +11,6 @@ export class NoticiasService {
   constructor(public http: HttpClient) { }
 
   verNoticias() : Observable<Noticia[]> {
-    return this.http.get<Noticia[]>("https://localhost:44319/api/noticias/vernoticias")
+    return this.http.get<Noticia[]>("https://localhost:44343/api/Noticias/VerNoticias")
   }
 }
