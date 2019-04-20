@@ -10,11 +10,14 @@
           <ion-card-title>{{ noticia.titulo }}</ion-card-title>
         </ion-card-header>
       
-        <ion-card-content (click)="gotoNewsDetail(noticia)">
+        <ion-card-content [routerLink]="'/news-detail/' + noticia.noticiaID">
           {{noticia.descripcion}}
           <p><strong>Autor: </strong> {{noticia.autor.nombre}} {{noticia.autor.apellido}}</p>
           <p><strong>Fecha: </strong> {{noticia.fecha | date}}</p>
         </ion-card-content>
+        <ion-buttons slot = 'start'>
+          <ion-button color = "danger" fill = "clear" (click)="deleteNew(noticia.noticiaID), indice">Eliminar</ion-button>
+        </ion-buttons>
+        
       </ion-card>
-
 </ion-content>

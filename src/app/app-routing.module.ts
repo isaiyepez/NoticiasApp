@@ -15,7 +15,9 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { path: 'news-list', loadChildren: './news-list/news-list.module#NewsListPageModule' },  { path: 'news-detail', loadChildren: './news-detail/news-detail.module#NewsDetailPageModule' }
+  { path: 'news-list', loadChildren: './news-list/news-list.module#NewsListPageModule' },
+  { path: 'news-detail', loadChildren: './news-detail/news-detail.module#NewsDetailPageModule' },
+  { path: 'news-add', loadChildren: './news-add/news-add.module#NewsAddPageModule' }
 
 ];
 

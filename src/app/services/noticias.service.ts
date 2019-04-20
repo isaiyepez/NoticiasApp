@@ -13,4 +13,9 @@ export class NoticiasService {
   verNoticias() : Observable<Noticia[]> {
     return this.http.get<Noticia[]>("https://localhost:44343/api/Noticias/VerNoticias")
   }
+
+  eliminaNoticia(noticiaID : number) : Observable<Boolean> {
+    return this.http.get<Boolean>("https://localhost:44343/api/Noticias/Eliminar/" + noticiaID)
+  }
+
 }

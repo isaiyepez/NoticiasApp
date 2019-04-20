@@ -28,4 +28,16 @@ export class NewsListPage implements OnInit {
     alert(noticia)
     this.route.navigate(['news-detail', {noticia: JSON.stringify(noticia)}])
   }
+
+  deleteNew(noticiaID: number, indice: number)
+  {
+    this.noticiasServicio.eliminaNoticia(noticiaID).subscribe(()=>{
+      this.noticias.splice(indice, 1)
+      alert("Noticia eliminada")
+    },
+    error=>{
+      console.log(error)
+    })
+
+  }
 }
