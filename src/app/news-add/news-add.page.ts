@@ -3,6 +3,7 @@ import { Autor } from '../models/autor.models';
 import { NoticiasService } from '../services/noticias.service';
 import { Noticia } from '../models/noticia.models';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-news-add',
@@ -13,9 +14,20 @@ export class NewsAddPage implements OnInit {
 
   autores: Autor[] = new Array<Autor>();
   noticia: Noticia = new Noticia();
-  constructor(private noticiaServicio: NoticiasService, public toastController: ToastController, public loadingController: LoadingController) {}
+
+  esEditable: boolean = false;
+
+  constructor(private noticiaServicio: NoticiasService, 
+    public toastController: ToastController, 
+    public loadingController: LoadingController,
+    private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    if (this.activatedRoute.snapshot.params.noticiaEditable != undefined)
+    {
+      this.noticia = new Noticia(JSON.parse(this.activatedRoute.snapshot.params.noticiaEditable));
+      this.esEditable = true;
+    }
     this.noticiaServicio.verAutores().subscribe((listadoAutores)=>{
       this.autores = listadoAutores
     })

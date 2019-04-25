@@ -32,7 +32,8 @@
         <ion-select-option *ngFor = "let autor of autores" [value]="autor.autorID">{{autor.nombre}} {{autor.apellido}}</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-button expand="block" (click) = "guardar()">Save New</ion-button>
+    <ion-button expand="block" *ngIf="!esEditable" (click) = "guardar()">Save New</ion-button>
+    <ion-button expand="block" *ngIf="esEditable" (click)="editar()">Edit New</ion-button>
   </ion-list>
 
 </ion-content>
