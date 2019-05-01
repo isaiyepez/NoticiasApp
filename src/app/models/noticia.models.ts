@@ -11,6 +11,7 @@ export interface Noticia {
 }
 
 export class Noticia {
+ 
     noticiaID: number;
     titulo: string;
     descripcion: string;
@@ -18,6 +19,7 @@ export class Noticia {
     fecha: Date;
     autorID: number;
     autor: Autor;
+
 
     constructor(datos?: Noticia) {
         if(datos != null)

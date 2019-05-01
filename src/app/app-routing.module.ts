@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'news-add', loadChildren: './news-add/news-add.module#NewsAddPageModule' }
 
 ];
-
+//asd
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

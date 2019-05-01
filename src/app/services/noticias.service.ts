@@ -26,5 +26,5 @@ export class NoticiasService {
   verAutores(): Observable<Autor[]> {
     return this.http.get<Autor[]>("https://localhost:44343/api/Noticias/VerAutores")
   }
-
+//asd
 }

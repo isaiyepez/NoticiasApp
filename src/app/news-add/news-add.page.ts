@@ -59,5 +59,5 @@ export class NewsAddPage implements OnInit {
     });
     toast.present();
   }
-
+//asd
 }
