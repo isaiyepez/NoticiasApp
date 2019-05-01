@@ -15,13 +15,18 @@ export class NoticiasService {
     return this.http.get<Noticia[]>("https://localhost:44343/api/Noticias/VerNoticias")
   }
 
+  
+  agregarNoticia(noticia: Noticia) : Observable<Boolean> {
+    return this.http.post<Boolean>("https://localhost:44343/api/Noticias/Agregar", noticia)
+  }
+
+  editarNoticia(noticia: Noticia) : Observable<Boolean> {
+    return this.http.put<Boolean>("https://localhost:44343/api/Noticias/Editar", noticia)
+  }
+
   eliminaNoticia(noticiaID : number) : Observable<Boolean> {
     return this.http.get<Boolean>("https://localhost:44343/api/Noticias/Eliminar/" + noticiaID)
   }
-
-  agregarNoticia(noticia: Noticia) : Observable<Boolean> {
-    return this.http.post<Boolean>("https://localhost:44343/api/Noticias/Agregar", noticia)
-  } 
 
   verAutores(): Observable<Autor[]> {
     return this.http.get<Autor[]>("https://localhost:44343/api/Noticias/VerAutores")

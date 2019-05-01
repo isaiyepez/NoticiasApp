@@ -45,5 +45,4 @@ export class NewsListPage implements OnInit {
   {
     this.route.navigate(['/add', { noticiaEditable: JSON.stringify(noticia) }])
   }
-  //asd
 }

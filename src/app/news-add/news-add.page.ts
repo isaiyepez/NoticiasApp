@@ -51,6 +51,24 @@ export class NewsAddPage implements OnInit {
     });
   }
 
+  async editar()
+  {
+    const loading = await this.loadingController.create({
+      message: 'Updating...',
+    });
+    await loading.present();
+    
+    this.noticiaServicio.agregarNoticia(this.noticia).subscribe(()=>{
+      loading.dismiss();
+      this.mostrarMensaje("New Updated");
+    },
+    error=>{
+      console.log("IYG: Error" + error);
+      this.mostrarMensaje(error);
+      loading.dismiss();
+    });
+  }
+
   async mostrarMensaje(mensaje: string)
   {
     const toast = await this.toastController.create({
@@ -59,5 +77,4 @@ export class NewsAddPage implements OnInit {
     });
     toast.present();
   }
-//asd
 }
